@@ -127,18 +127,18 @@ print(paste0("hillx (min/med/max): ", round(min(hillx),3), ' / ',
 
 # Save and display hillshades
 
-# hillshade y
+# Hillshade y
 writeTIFF(hilly, "hillshadey.tif",
           bits.per.sample=16, compression="LZW")
-# Display hillshade
+
 image(t(hilly[nrow(hilly):1,]), useRaster=TRUE,
       col=c(gray.colors(256, start=0, end=1, gamma=0.5)),
       asp=nrow(hilly)/ncol(hilly), axes=FALSE)
 
-# hillshade x
+# Hillshade x
 writeTIFF(hillx, "hillshadex.tif",
           bits.per.sample=16, compression="LZW")
-# Display hillshade
+
 image(t(hillx[nrow(hillx):1,]), useRaster=TRUE,
       col=c(gray.colors(256, start=0, end=1, gamma=0.5)),
       asp=nrow(hillx)/ncol(hillx), axes=FALSE)
